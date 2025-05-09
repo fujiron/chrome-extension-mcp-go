@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "MCP Chrome Extension",
+  "version": "1.0",
+  "description": "Chrome Extension for Model Context Protocol",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "cookies",
+    "management",
+    "tabs",
+    "webNavigation",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "host_permissions": [
+    "<all_urls>",
+    "http://localhost:8765/*",
+    "ws://localhost:8765/*"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; connect-src 'self' ws://localhost:8765 http://localhost:8765"
+  }
+}
