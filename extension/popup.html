@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCP Chrome Extension</title>
+  <style>
+    body {
+      width: 300px;
+      font-family: Arial, sans-serif;
+      padding: 10px;
+    }
+    .status {
+      padding: 8px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+    .connected {
+      background-color: #d4edda;
+      color: #155724;
+    }
+    .disconnected {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+    .info {
+      font-size: 0.8rem;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>MCP Chrome Extension</h2>
+  <div id="connection-status" class="status disconnected">
+    Checking connection status...
+  </div>
+  <div class="info">
+    <div>Server port: <span id="port">8765</span></div>
+    <div>Extension ID: <span id="extension-id"></span></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
