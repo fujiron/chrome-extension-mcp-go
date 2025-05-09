@@ -597,8 +597,11 @@ func handleMCPRequests() {
 }
 
 func main() {
-	// Seed the random number generator
-	rand.Seed(time.Now().UnixNano())
+	// Initialize random with current time as seed
+	r := rand.New(rand.NewSource(time.Now().UnixNano()))
+	rand.Seed = func(seed int64) {
+		r.Seed(seed)
+	}
 
 	// Start WebSocket server
 	http.HandleFunc("/", handleWebSocketConnections)
